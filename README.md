@@ -5,19 +5,23 @@
 ## 📸 Application Screenshots & Verification Status
 
 ### 1. Midnight Preprod Live dApp Dashboard
-![Midnight Preprod Live dApp Dashboard](assets/preprod_dashboard.png)
+<img width="2843" height="1569" alt="image" src="https://github.com/user-attachments/assets/6604234e-7d13-45e0-b1ca-b741199fab14" />
+
 
 ### 2. Lace Wallet Connection & Midnight Preprod Network Integration
-![Lace Wallet Connection - Midnight Preprod](assets/lace_wallet_preprod.png)
+<img width="2206" height="276" alt="image" src="https://github.com/user-attachments/assets/735a1c19-8194-43a1-81ab-15fca5179732" />
+
 
 ### 3. Automated CI/CD Pipeline & Build Checks Passed
 ![Automated CI/CD Pipeline Checks Passed](assets/ci_checks_passed.png)
 
 ### 4. System Initialization & Circuit Verification
-![System Initialization](assets/initialization.png)
+<img width="2859" height="1573" alt="image" src="https://github.com/user-attachments/assets/899db0b9-e421-4903-b8ff-2fa880728752" />
+
 
 ### 5. Private Witness Signing Panel & ZK Audit Console
-![Private Witness Signing](assets/witness_signing.png)
+<img width="2861" height="1564" alt="image" src="https://github.com/user-attachments/assets/4417631b-4efa-4006-b20d-dcd620705194" />
+
 
 
 🌐 **Live Web App**: https://contract-signing-ruddy.vercel.app/ 
