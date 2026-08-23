@@ -1,0 +1,49 @@
+name: Confidential Contract Signing CI/CD
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verify Compact Circuit Artifacts
+        run: |
+          if [ -d "contract/managed" ]; then
+            echo "Compact managed circuit artifacts verified"
+          else
+            echo "Warning: contract/managed directory missing"
+          fi
+
+      - name: Install Contract Dependencies
+        run: |
+          cd contract
+          npm install
+
+      - name: Compile Smart Contract Circuit & Run Unit Tests
+        run: |
+          cd contract
+          npm run compile
+          npm test
+
+      - name: Verify Root Test Suite
+        run: |
+          npm test
+
+      - name: Install Frontend Dependencies & Typecheck Build
+        run: |
+          cd frontend
+          npm install
+          npm run build
