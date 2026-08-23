@@ -197,7 +197,7 @@ npm run setup -- --network preprod
 - [x] Private witness signing workflow proving circuit execution without exposing private keys
 - [x] Public ledger state viewer with active status badges
 - [x] `.env.example` file provided (`VITE_NETWORK`, `VITE_CONTRACT_ADDRESS`, `VITE_PROOF_SERVER_URL`)
-- [x] Deployed live on Vercel ([confidential-contract-signing.vercel.app](https://confidential-contract-signing.vercel.app/))
+- [x] Deployed live on Vercel https://contract-signing-ruddy.vercel.app/ 
 
 ### Level 3 Checklist
 
