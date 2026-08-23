@@ -13,7 +13,8 @@
 
 
 ### 3. Automated CI/CD Pipeline & Build Checks Passed
-![Automated CI/CD Pipeline Checks Passed](assets/ci_checks_passed.png)
+<img width="1172" height="302" alt="image" src="https://github.com/user-attachments/assets/f02be714-e19f-4b0c-83a5-a842651d4e89" />
+
 
 ### 4. System Initialization & Circuit Verification
 <img width="2859" height="1573" alt="image" src="https://github.com/user-attachments/assets/899db0b9-e421-4903-b8ff-2fa880728752" />
