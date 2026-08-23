@@ -1,0 +1,19 @@
+{
+  "name": "confidential-contract-signing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "cd frontend && npm install",
+    "compile": "cd contract && npm run compile",
+    "setup": "cd contract && npm run setup",
+    "cli": "cd contract && npm run cli",
+    "test": "cd contract && npm run compile && npm run test",
+    "build": "cd frontend && npm install && npm run build",
+    "dev": "cd frontend && npm run dev"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}

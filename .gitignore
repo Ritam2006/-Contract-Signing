@@ -1,0 +1,29 @@
+# Node & dependencies
+node_modules/
+frontend/node_modules/
+contract/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment and state files
+.env
+.env.local
+.env.*.local
+.midnight-state.json
+*.log
+
+# Build output
+dist/
+build/
+coverage/
+.next/
+frontend/.next/
+out/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
