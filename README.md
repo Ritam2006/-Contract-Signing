@@ -28,7 +28,9 @@
 🌐 **Live Web App**: https://contract-signing-ruddy.vercel.app/   
 
 🎬 **Demo Video**:https://youtu.be/uUoe0-uLrgU
-⚡ **Network**: `Preprod`  
+
+⚡ **Network**: `Preprod` 
+
 🔑 **Preprod Contract Address**: `0xfa0030537b98d41e777e30129a492c504edb968555f4251f450f9375a984c2f1`
 
 A privacy-preserving, multi-party agreement execution platform built on the **Midnight Network** using **Compact** zero-knowledge smart contracts, TypeScript, React, and **Next.js App Router**.
