@@ -1,0 +1,59 @@
+pragma language_version >= 0.14.0;
+
+import CompactStandardLibrary;
+
+export enum ContractStatus {
+  DRAFT,
+  ACTIVE,
+  SIGNED,
+  REVOKED
+}
+
+export ledger current_status: ContractStatus;
+export ledger terms_hash: Bytes<32>;
+export ledger signers_root: Bytes<32>;
+export ledger required_signers: Uint<8>;
+export ledger completed_signatures: Uint<8>;
+
+witness secret_signing_key(): Bytes<32>;
+witness document_secret_nonce(): Bytes<32>;
+
+export circuit initialize_contract(
+  initial_terms_hash: Bytes<32>,
+  initial_signers_root: Bytes<32>,
+  num_required: Uint<8>
+): [] {
+  terms_hash = disclose(initial_terms_hash);
+  signers_root = disclose(initial_signers_root);
+  required_signers = disclose(num_required);
+  completed_signatures = 0;
+  current_status = ContractStatus.ACTIVE;
+}
+
+export circuit sign_contract(contract_id: Bytes<32>): [] {
+  assert(current_status == ContractStatus.ACTIVE, "Contract is not active for signing");
+  assert(completed_signatures < required_signers, "All required signatures are already present");
+
+  const key = secret_signing_key();
+  const nonce = document_secret_nonce();
+
+  // Validate that private signing key and secret nonce are present
+  assert(key != pad(32, ""), "Invalid private key witness");
+  assert(nonce != pad(32, ""), "Invalid document secret nonce");
+
+  completed_signatures = (completed_signatures + 1) as Uint<8>;
+  if (completed_signatures >= required_signers) {
+    current_status = ContractStatus.SIGNED;
+  }
+}
+
+export circuit revoke_contract(contract_id: Bytes<32>): [] {
+  assert(current_status != ContractStatus.REVOKED, "Contract is already revoked");
+  const key = secret_signing_key();
+  const nonce = document_secret_nonce();
+
+  assert(key != pad(32, ""), "Unauthorized revocation key witness");
+  assert(nonce != pad(32, ""), "Unauthorized revocation nonce witness");
+
+  current_status = ContractStatus.REVOKED;
+}
