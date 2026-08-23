@@ -9,7 +9,7 @@
     "setup": "cd contract && npm run setup",
     "cli": "cd contract && npm run cli",
     "test": "cd contract && npm run compile && npm run test",
-    "build": "cd frontend && npm install && npm run build",
+    "build": "if [ -d \"frontend\" ]; then cd frontend && npm install && npm run build; else npm run build; fi",
     "dev": "cd frontend && npm run dev"
   },
   "devDependencies": {
